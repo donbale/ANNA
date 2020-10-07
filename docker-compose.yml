@@ -1,0 +1,37 @@
+version: '3'
+services:
+
+  rasa:
+    container_name: anna-rasa-server
+    image: rasa/rasa:1.10.12-full
+    command:
+      - run 
+      - --cors
+      - "*"
+      - --enable-api   
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    depends_on:
+      - action-server
+      - duckling
+
+  action-server:
+    container_name: anna-rasa-action-server
+    image: rasa/rasa-sdk:1.10.0
+    command:
+      - start
+    volumes:
+      - ./actions:/app/actions
+    ports:
+      - 5055
+
+  duckling:
+    container_name: anna-duckling-server
+    image: rasa/duckling:latest
+    ports:
+    - "8000:8000"
+
+
+

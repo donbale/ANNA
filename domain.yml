@@ -1,0 +1,92 @@
+session_config:
+  session_expiration_time: 480
+  carry_over_slots_to_new_session: true
+intents:
+- start_training:
+    use_entities: []
+- recording_training:
+    use_entities: []
+- stop_training
+- greet
+- goodbye
+- affirm
+- deny
+- help
+- bot_challenge
+- faq
+- inform
+entities:
+- person_name
+- training_agreement
+- name
+slots:
+  agreement:
+    type: unfeaturized
+    auto_fill: false
+  date_of_birth:
+    type: unfeaturized
+    auto_fill: false
+  gender:
+    type: unfeaturized
+    auto_fill: false
+  nationality:
+    type: unfeaturized
+    auto_fill: false
+  person_name:
+    type: unfeaturized
+    auto_fill: false
+  profession:
+    type: unfeaturized
+    auto_fill: false
+  requested_slot:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hey there, my name is ANNA. I am here to guide you. If you are ready to
+      start or continue your journey just say 'ANNA Start' and if at anytime you need
+      assistance just say 'ANNA Help'
+  - text: Hi, I'm ANNA! Your Artificial Neural Networking Assistant. If you are ready
+      to start or continue your training just say 'ANNA Start' and if at anytime you
+      need assistance just say 'ANNA Help'
+  - text: Hi! My name's ANNA and I'm here to guide you through your training sessions.
+      If you are ready to start or continue just say 'ANNA Start' and if at anytime
+      you need assistance just say 'ANNA Help'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I'm ANNA! Your Artificial Neural Networking Assistant, and yes I am a bot
+  utter_what_help:
+  - text: Ok, what can I help you with?
+  utter_inform_privacypolicy:
+  - text: By speaking to me you agree to our [privacy policy](https://futureprotected.com/privacy-policy/).
+  utter_ask_agreement:
+  - text: Welcome to the preliminary stage of your digital reflection, stage 0. There
+      is nothing too in depth at this stage, just a few questions to start the process
+      off. Before we commence we need your verbal agreement that all of your responses
+      during the training stages are recorded for reflection modeling purposes. If
+      you agree just say 'ANNA I agree' or if you don't agree say 'ANNA stop training'
+  utter_ask_person_name:
+  - text: Great! Let's get started. What name would you like to be known as, considering
+      this will also be the name of your reflection?
+  utter_ask_date_of_birth:
+  - text: Nice to meet you {person_name} as you know my name is ANNA. Please tell
+      me your date of birth?
+  utter_ask_profession:
+  - text: What is or was your profession for the majority of your life?
+  utter_ask_why_profession:
+  - text: Why did you choose to be a {profession}?
+  utter_ask_gender:
+  - text: What gender do you identify with?
+  utter_ask_nationality:
+  - text: What nationality do you identify with?
+  utter_submit_stage0:
+  - text: Thankyou for completing the first stage of your digital reflection training,
+      whilst it is very rare at this stage to have enough information for a complete
+      reflection model your next stage will be available soon.
+actions:
+- action_greet_user
+- respond_faq
+forms:
+- stage0_form
