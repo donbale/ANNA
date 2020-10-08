@@ -1,10 +1,8 @@
 venv3/
 travis_gcloud_auth.json
 docker-compose.override.yml
-.DS_Store
 *.pyc
 *.log
-models
 *.egg-info
 failed_stories.txt
 failed_stories.md
