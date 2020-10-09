@@ -45,7 +45,7 @@ class ActionGreetUser(Action):
         return []
 
 class stage0_form(FormAction):
-    """Collects sales information and adds it to the spreadsheet"""
+    """First example training stage"""
 
     def name(self) -> Text:
         return "stage0_form"
